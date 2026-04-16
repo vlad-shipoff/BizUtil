@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BizUtil": {
+      "commandName": "Project",
+      "commandLineArgs": "-get"
+    }
+  }
+}
