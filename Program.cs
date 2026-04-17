@@ -81,10 +81,11 @@ namespace BizUtil
                             Encoding encoding = Encoding.UTF8;
 
                             using (StreamReader streamReader = new StreamReader(fileStream, encoding))
-                                result = streamReader.ReadToEnd();  // Читать поток и конвертировать его в строку
+                            result = streamReader.ReadToEnd();  // Читать поток и конвертировать его в строку
+                            string wstr = "u001D";
+                            result = result.Replace("@1D", $"\\{wstr}");
                         }
                         //----------------------------------------------------------
-
                         CaptureService captureService = new CaptureService($"http://{Program.brain2Ip}:9997/api/v1/");
                         ToLog("GetCaptureData");
                         //result = captureService.GetCaptureData().ToString();

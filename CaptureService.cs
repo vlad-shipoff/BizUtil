@@ -114,6 +114,8 @@ namespace BizUtil
             if (response2.IsSuccessStatusCode)
             {
                 outString = await response2.Content.ReadAsStringAsync();
+                string wstr = "u001D";
+                outString = outString.Replace("@1D",$"\\{wstr}");   // строка из capture содержит кривой <GS>  
                 Program.ToLog("GetCaptureData()");
             }
             else
